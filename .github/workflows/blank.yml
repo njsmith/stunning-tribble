@@ -16,3 +16,4 @@ jobs:
         env | sort
         echo Add other actions to build,
         echo test, and deploy your project.
+        cat $(GITHUB_EVENT_PATH)
