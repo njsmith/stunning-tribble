@@ -3,7 +3,7 @@ on: [repository_dispatch]
 jobs:
   jobone:
     runs-on: ubuntu-latest
-    name: "{{ github.event.client_payload.jobid }}"
+    name: "${{ github.event.client_payload.jobid }}"
 
     steps:
     - name: Run stuff
