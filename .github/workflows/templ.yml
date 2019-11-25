@@ -3,7 +3,7 @@ name: Templated
 on: [repository_dispatch]
 
 jobs:
-  {{ github.event.client_payload.jobid }}:
+  "{{ github.event.client_payload.jobid }}":
 
     runs-on: ubuntu-latest
 
