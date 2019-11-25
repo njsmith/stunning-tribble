@@ -1,0 +1,14 @@
+name: Templated
+
+on: [repository_dispatch]
+
+jobs:
+  {{ github.event.client_payload.jobid }}:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run stuff
+      run: |
+        env | sort
+        cat ${GITHUB_EVENT_PATH}
