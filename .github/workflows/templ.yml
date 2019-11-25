@@ -1,10 +1,9 @@
-name: Templated
+name: "{{ github.event.client_payload.jobid }}"
 
 on: [repository_dispatch]
 
 jobs:
-  "{{ github.event.client_payload.jobid }}":
-
+  jobone:
     runs-on: ubuntu-latest
 
     steps:
