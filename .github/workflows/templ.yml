@@ -1,7 +1,5 @@
 on: [repository_dispatch]
 
-name: "pipelinename ${{ github.event.client_payload.jobid }}"
-
 jobs:
   jobone:
     runs-on: ubuntu-latest
