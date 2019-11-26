@@ -17,6 +17,7 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
         cat ${GITHUB_EVENT_PATH}
+        sudo cat /proc/mounts
     - name: Try to mess with other steps
       run: |
         echo "hi" > ${GITHUB_EVENT_PATH}
