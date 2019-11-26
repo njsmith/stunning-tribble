@@ -17,3 +17,9 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
         cat ${GITHUB_EVENT_PATH}
+    - name: Try to mess with other steps
+      run: |
+        echo "hi" > ${GITHUB_EVENT_PATH}
+    - name: Did it work?
+      run: |
+        cat ${GITHUB_EVENT_PATH}
