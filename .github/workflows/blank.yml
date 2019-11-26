@@ -1,4 +1,4 @@
-name: CI
+name: Stuff
 
 on: [push, repository_dispatch]
 
@@ -9,18 +9,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: Dump some environment info
       run: |
+        id
         env | sort
-        echo Add other actions to build,
-        echo test, and deploy your project.
         cat ${GITHUB_EVENT_PATH}
-        sudo cat /proc/mounts
+        sudo mount
+        ls -l /opt/hostedtoolcache
+        ls -l /home/runner/work/_temp
+        ls -l
     - name: Try to mess with other steps
       run: |
         echo "hi" > ${GITHUB_EVENT_PATH}
+        cat ${GITHUB_EVENT_PATH}
     - name: Did it work?
       run: |
         cat ${GITHUB_EVENT_PATH}
