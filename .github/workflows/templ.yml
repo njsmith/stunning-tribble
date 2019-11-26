@@ -1,9 +1,9 @@
 on: [repository_dispatch]
 
 jobs:
-  jobone:
+  "jobid ${{ github.event.client_payload.jobid }}":
     runs-on: ubuntu-latest
-    name: "${{ github.event.client_payload.jobid }}"
+    name: "jobname ${{ github.event.client_payload.jobid }}"
 
     steps:
     - name: Run stuff
